@@ -1,0 +1,17 @@
+{
+    "classes": [{
+            "id": 1,
+            "name": "react"
+        },
+        {
+            "id": 2,
+            "name": "native"
+        }
+    ],
+    "students": [{
+        "name": "dat3",
+        "classId": 1,
+        "id": 5
+    }]
+
+}

@@ -1,0 +1,65 @@
+{
+  "classes": [
+    {
+      "id": 1,
+      "name": "react"
+    },
+    {
+      "id": 2,
+      "name": "native"
+    }
+  ],
+  "students": [
+    {
+      "name": "Hoàng Quốc Đạt",
+      "address": "adasa",
+      "gender": "adasd",
+      "classId": 2,
+      "id": 6
+    },
+    {
+      "name": "Hoàng Quốc Đạt",
+      "dob": "03/29/2022",
+      "address": "adasd",
+      "gender": "adasd",
+      "classId": 2,
+      "id": 7
+    },
+    {
+      "name": "Hoàng Quốc Đạt",
+      "dob": "03/22/2022",
+      "classId": 2,
+      "gender": "adad",
+      "address": "asda",
+      "id": 8
+    },
+    {
+      "name": "ada",
+      "address": "asda",
+      "gender": "asda",
+      "classId": 1,
+      "id": 9
+    },
+    {
+      "name": "Hoàng Quốc Đạt",
+      "address": "asda",
+      "gender": "asda",
+      "classId": 1,
+      "id": 10
+    },
+    {
+      "name": "asad",
+      "address": "asad",
+      "gender": "asda",
+      "classId": 2,
+      "id": 11
+    },
+    {
+      "name": "asdads",
+      "address": "asdasd",
+      "gender": "asda",
+      "classId": 2,
+      "id": 12
+    }
+  ]
+}
