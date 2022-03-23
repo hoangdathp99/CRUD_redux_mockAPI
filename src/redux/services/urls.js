@@ -1,6 +1,7 @@
 const url = {
-  getStudents: "http://localhost:3001/students?_expand=class",
+  getStudents: "http://localhost:3001/students",
   getClasses: "http://localhost:3001/classes",
-  deleteStudent: "http://localhost:3001/students/",
+  // deleteStudent: "http://localhost:3001/students/",
+  // getStudentById: "http://localhost:3001/students/",
 };
 export default url;

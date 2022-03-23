@@ -8,7 +8,8 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ListClass from "./components/listClass";
 import ListStudents from "./components/listStudents";
-import AddStudents from "./components/addStudents";
+import AddStudents from "./view/addStudents";
+import EditStudent from "./view/editStudent";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -36,6 +37,14 @@ ReactDOM.render(
             path="/Add"
             element={
               <AddStudents
+              // reload={true}
+              />
+            }
+          />
+          <Route
+            path="/Edit/:id"
+            element={
+              <EditStudent
               // reload={true}
               />
             }

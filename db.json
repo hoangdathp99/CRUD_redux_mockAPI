@@ -11,44 +11,7 @@
   ],
   "students": [
     {
-      "name": "Hoàng Quốc Đạt",
-      "address": "adasa",
-      "gender": "adasd",
-      "classId": 2,
-      "id": 6
-    },
-    {
-      "name": "Hoàng Quốc Đạt",
-      "dob": "03/29/2022",
-      "address": "adasd",
-      "gender": "adasd",
-      "classId": 2,
-      "id": 7
-    },
-    {
-      "name": "Hoàng Quốc Đạt",
-      "dob": "03/22/2022",
-      "classId": 2,
-      "gender": "adad",
-      "address": "asda",
-      "id": 8
-    },
-    {
-      "name": "ada",
-      "address": "asda",
-      "gender": "asda",
-      "classId": 1,
-      "id": 9
-    },
-    {
-      "name": "Hoàng Quốc Đạt",
-      "address": "asda",
-      "gender": "asda",
-      "classId": 1,
-      "id": 10
-    },
-    {
-      "name": "asad",
+      "name": "asadasa",
       "address": "asad",
       "gender": "asda",
       "classId": 2,
@@ -60,6 +23,69 @@
       "gender": "asda",
       "classId": 2,
       "id": 12
+    },
+    {
+      "name": "Hoàng Quốc Đạt",
+      "address": "58 Lãm Hà, Kiến An, Hải Phòng",
+      "gender": "qw",
+      "classId": 1,
+      "id": 13
+    },
+    {
+      "name": "dat",
+      "dob": "03/22/2022",
+      "address": "asda",
+      "gender": "adasd",
+      "classId": 1,
+      "id": 18
+    },
+    {
+      "name": "qwerty",
+      "dob": "03/31/2022",
+      "address": "qweqw",
+      "gender": "qweqe",
+      "classId": 2,
+      "id": 19
+    },
+    {
+      "name": "adasda",
+      "dob": "03/29/2022",
+      "address": "asdadad",
+      "gender": "asdadad",
+      "classId": 2,
+      "id": 20
+    },
+    {
+      "name": "dathq",
+      "dob": "03/31/2022",
+      "address": "adasd",
+      "gender": "asdads",
+      "classId": 1,
+      "id": 21
+    },
+    {
+      "name": "test2345",
+      "dob": "03/23/2022",
+      "address": "stts",
+      "gender": "tstst",
+      "classId": 2,
+      "id": 22
+    },
+    {
+      "name": "test145",
+      "dob": "03/31/2022",
+      "address": "asdad",
+      "gender": "asdasd",
+      "classId": 1,
+      "id": 23
+    },
+    {
+      "name": "test5",
+      "dob": "03/25/2022",
+      "address": "dasa",
+      "gender": "dada",
+      "classId": 1,
+      "id": 24
     }
   ]
 }

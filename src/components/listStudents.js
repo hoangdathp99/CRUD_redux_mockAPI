@@ -16,25 +16,28 @@ import { Link } from "react-router-dom";
 // import { getStudentsSelector } from "../redux/slice/getDataSlice";
 import {
   deleteStudent,
+  getStudentById,
   getStudents,
   selectStatus,
   selectStatus_delete,
+  selectStatus_edit,
   selectStudents,
 } from "../redux/slice/getStudents/getStudents";
 export default function ListStudents() {
   const students = useSelector(selectStudents);
   const status_delete = useSelector(selectStatus_delete);
+  const status_edit = useSelector(selectStatus_edit);
   const status = useSelector(selectStatus);
   const dispatch = useDispatch();
+  // const select = useSelector();
   const [deleted_id, setDeleted_id] = useState("");
   // console.log(status_delete);
-
+  console.log(students);
   console.log(status);
   useEffect(() => {
     if (status_delete === "done" || status_delete == "idle")
-      dispatch(getStudents());
+      dispatch(getStudents("?_expand=class"));
   }, [status_delete]);
-
   const useStyles = makeStyles({
     table: {
       // width: "90%",
@@ -99,8 +102,11 @@ export default function ListStudents() {
                   color="primary"
                   variant="contained"
                   style={{ margin: 30 }}
-                  // component={Link}
-                  // to={`/edit/${user._id}`}
+                  component={Link}
+                  to={`/Edit/${student.id}`}
+                  // onClick={(e) => {
+                  //   getsudentById(student.id);
+                  // }}
                 >
                   Edit
                 </Button>
