@@ -21,14 +21,14 @@
       "name": "asdads",
       "address": "asdasd",
       "gender": "asda",
-      "classId": 2,
+      "classId": 1,
       "id": 12
     },
     {
       "name": "Hoàng Quốc Đạt",
       "address": "58 Lãm Hà, Kiến An, Hải Phòng",
       "gender": "qw",
-      "classId": 1,
+      "classId": 2,
       "id": 13
     },
     {
@@ -36,7 +36,7 @@
       "dob": "03/22/2022",
       "address": "asda",
       "gender": "adasd",
-      "classId": 1,
+      "classId": 2,
       "id": 18
     },
     {
@@ -80,12 +80,35 @@
       "id": 23
     },
     {
-      "name": "test5",
+      "name": "test56",
       "dob": "03/25/2022",
       "address": "dasa",
       "gender": "dada",
       "classId": 1,
       "id": 24
+    },
+    {
+      "dob": "03/26/2022",
+      "name": "test145",
+      "address": "qweqweqweq12313",
+      "gender": "qweqwe1231",
+      "classId": 1,
+      "id": 25
+    },
+    {
+      "name": "qweqr",
+      "address": "qewqwe",
+      "gender": "qweqw",
+      "classId": 2,
+      "dob": "03/25/2022",
+      "id": 26
+    },
+    {
+      "name": "testtest",
+      "address": "tset",
+      "gender": "test",
+      "classId": 1,
+      "id": 27
     }
   ]
 }

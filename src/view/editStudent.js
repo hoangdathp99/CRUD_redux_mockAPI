@@ -27,13 +27,6 @@ export default function EditStudent() {
   const { id } = useParams();
   console.log(id);
   const studentById = useSelector(selectStudentById);
-  const ListClasses = useSelector(selectClasses);
-  const status_edit = useSelector(selectStatus_edit);
-  const status = useSelector(selectStatus);
-  const [student, setStudent] = useState({});
-  const [time, setTime] = useState("");
-  const [value, setValue] = useState(null);
-  const { name, dob, address, gender, classId } = student;
   const dispatch = useDispatch();
   const useStyles = makeStyles({
     container: {
@@ -47,27 +40,11 @@ export default function EditStudent() {
   });
   const loadStudentdetail = (id) => {
     dispatch(getStudentById(id));
-    setStudent({ ...studentById });
   };
   useEffect(() => {
     loadStudentdetail(id);
   }, [id]);
   console.log(studentById);
-  const onValueChange = (e) => {
-    console.log(e.target.value);
-    setStudent({ ...student, [e.target.name]: e.target.value });
-  };
-  const handleDate = (e) => {
-    setValue(e);
-    // format(e, "dd/MM/yyyy");
-    var input = e;
-    var date = format(input, "MM/dd/yyyy");
-    console.log(date);
-    setStudent({ ...student, ["dob"]: date });
-    setTime(input);
-    console.log({ student });
-  };
-  const classes = useStyles();
   return (
     <EditForm studentById={studentById}></EditForm>
     // <form

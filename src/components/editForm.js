@@ -20,18 +20,20 @@ import {
   resetStatus_add,
   selectStatus_edit,
 } from "../redux/slice/getStudents/getStudents";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from "react-router-dom";
 export default function EditForm({ studentById }) {
   const [student, setStudent] = useState({});
-  const [time, setTime] = useState("");
+  //   const [classname, setClassname] = useState("");
   const [value, setValue] = useState(null);
   const { name, dob, address, gender, classId } = student;
   const ListClasses = useSelector(selectClasses);
   const status_edit = useSelector(selectStatus_edit);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(studentById);
+  var classid = "";
+  console.log(studentById.classId);
+  //   console.log(ListClasses.findIndex(studentById.classId));
   const useStyles = makeStyles({
     container: {
       display: "block",
@@ -50,6 +52,10 @@ export default function EditForm({ studentById }) {
   }, [status_edit]);
   useEffect(() => {
     setStudent(studentById);
+    if (student.classId != null) {
+      console.log(student.classId);
+    }
+    classid = student.classId;
   }, [studentById]);
   const onValueChange = (e) => {
     console.log(e.target.value);
@@ -57,7 +63,7 @@ export default function EditForm({ studentById }) {
     console.log(student);
   };
   const handleDate = (e) => {
-    setValue(e);
+    // setValue(e);
     // format(e, "dd/MM/yyyy");
     var input = e;
     var date = format(input, "MM/dd/yyyy");
@@ -66,7 +72,8 @@ export default function EditForm({ studentById }) {
     // setTime(input);
     console.log({ student });
   };
-  const editStudentDetail = async (id) => {
+  const editStudentDetail = (event) => {
+    event.preventDefault();
     console.log("edit");
     console.log(student);
     dispatch(editStudent(student));
@@ -82,18 +89,18 @@ export default function EditForm({ studentById }) {
       {student.id !== 0 ? (
         <form
           className={classes.container}
-          onSubmit={(e) => editStudentDetail()}
+          onSubmit={(e) => editStudentDetail(e)}
           autoComplete="off"
         >
           <FormControl fullWidth>
             <TextField
               //   placeholder={studentById.name}
-              defaultValue={studentById.name}
+              //   defaultValue={studentById.name}
               label="Name"
               required
               onChange={(e) => onValueChange(e)}
               name="name"
-              value={student.name}
+              value={name}
               id="my-input"
             />
           </FormControl>
@@ -102,7 +109,7 @@ export default function EditForm({ studentById }) {
               <MobileDatePicker
                 required
                 label="Date of birth"
-                value={student.dob}
+                value={dob}
                 onChange={(newValue) => handleDate(newValue)}
                 renderInput={(params) => (
                   <TextField
@@ -135,25 +142,24 @@ export default function EditForm({ studentById }) {
           <FormControl fullWidth>
             <InputLabel>Class</InputLabel>
             <Select
+              key={`select-${studentById.classId}`}
               style={{ minWidth: "30px" }}
               label="Class"
-              required
+              //   required
+              //   displayEmpty
               id="my-input"
               name="classId"
-              //   value="asca"
-              onChange={
-                (e) => onValueChange(e)
-                // console.log(e.target.value);
-              }
+              defaultValue={studentById.classId ?? " "}
+              onChange={(e) => onValueChange(e)}
             >
-              {/* <Autocomplete value={student.class.name}></Autocomplete> */}
               {ListClasses.map((Class) => {
                 // console.log(Class);
                 return (
                   <MenuItem
                     key={Class.id}
                     value={Class.id}
-                    defaultValue={Class.name}
+                    // defaultValue={Class.name}
+                    // selected={Class.id === student.classId}
                   >
                     {Class.name}
                   </MenuItem>
@@ -162,15 +168,108 @@ export default function EditForm({ studentById }) {
             </Select>
           </FormControl>
           <Button
+            type="submit"
             variant="outlined"
-            onClick={(e) => {
-              editStudentDetail(student.id);
-            }}
+            // onClick={(e) => {
+            //   editStudentDetail(student.id);
+            // }}
           >
             Add
           </Button>
         </form>
       ) : (
+        // <div>Hello</div>
+        // <form
+        //   className={classes.container}
+        //   onSubmit={(e) => editStudentDetail(student.id)}
+        //   autoComplete="off"
+        // >
+        //   <FormControl fullWidth>
+        //     <TextField
+        //       //   placeholder={studentById.name}
+        //       defaultValue={studentById.name}
+        //       label="Name"
+        //       required
+        //       onChange={(e) => onValueChange(e)}
+        //       name="name"
+        //       value={student.name}
+        //       id="my-input"
+        //     />
+        //   </FormControl>
+        //   <FormControl fullWidth>
+        //     <LocalizationProvider dateAdapter={AdapterDateFns}>
+        //       <MobileDatePicker
+        //         required
+        //         label="Date of birth"
+        //         value={student.dob}
+        //         onChange={(newValue) => handleDate(newValue)}
+        //         renderInput={(params) => (
+        //           <TextField
+        //             {...params}
+        //             helperText={params?.inputProps?.placeholder}
+        //           />
+        //         )}
+        //       />
+        //     </LocalizationProvider>
+        //   </FormControl>
+        //   <TextField
+        //     fullWidth
+        //     label="address"
+        //     required
+        //     onChange={(e) => onValueChange(e)}
+        //     name="address"
+        //     value={address}
+        //     id="my-input"
+        //   ></TextField>
+
+        //   <TextField
+        //     fullWidth
+        //     label="gender"
+        //     required
+        //     onChange={(e) => onValueChange(e)}
+        //     name="gender"
+        //     value={gender}
+        //     id="my-input"
+        //   />
+        //   <FormControl fullWidth>
+        //     <InputLabel>Class</InputLabel>
+        //     <Select
+        //       style={{ minWidth: "30px" }}
+        //       label="Class"
+        //       required
+        //       //   displayEmpty
+        //       id="my-input"
+        //       name="classId"
+        //       //   placeholder=
+        //       //   value="asca"
+        //       //   defaultValue={1 ?? " "}
+        //       onChange={(e) => onValueChange(e)}
+        //     >
+        //       {ListClasses.map((Class) => {
+        //         // console.log(Class);
+        //         return (
+        //           <MenuItem
+        //             key={Class.id}
+        //             value={Class.id}
+        //             // defaultValue={Class.name}
+        //             // selected={Class.id === student.classId}
+        //           >
+        //             {Class.name}
+        //           </MenuItem>
+        //         );
+        //       })}
+        //     </Select>
+        //   </FormControl>
+        //   <Button
+        //     type="submit"
+        //     // variant="outlined"s
+        //     // onClick={(e) => {
+        //     //   editStudentDetail(student.id);
+        //     // }}
+        //   >
+        //     Add
+        //   </Button>
+        // </form>
         <div></div>
       )}
     </div>
