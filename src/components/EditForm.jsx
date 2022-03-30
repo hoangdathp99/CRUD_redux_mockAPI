@@ -1,8 +1,8 @@
-import { useEffect, useState, useLayoutEffect } from "react";
-import { makeStyles } from "@mui/styles";
-import { format } from "date-fns";
+import { LocalizationProvider, MobileDatePicker } from "@mui/lab";
+import { v4 as uuid } from "uuid";
+
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import {
-  Autocomplete,
   Button,
   FormControl,
   InputLabel,
@@ -10,10 +10,12 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-import { LocalizationProvider, MobileDatePicker } from "@mui/lab";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import { selectClasses } from "../redux/slice/getClasses/getClasses";
+import { makeStyles } from "@mui/styles";
+import { format } from "date-fns";
+import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { selectClasses } from "../redux/slice/getClasses/getClasses";
 import {
   addStudents,
   editStudent,
@@ -22,7 +24,6 @@ import {
   selectStatus_edit,
 } from "../redux/slice/getStudents/getStudents";
 
-import { useNavigate } from "react-router-dom";
 export default function EditForm({ studentById, role }) {
   const [student, setStudent] = useState({});
   const [value, setValue] = useState(null);
@@ -33,8 +34,11 @@ export default function EditForm({ studentById, role }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  console.log(role);
-
+  // console.log(uuid());
+  const uid = useMemo(() => {
+    return uuid();
+  }, []);
+  console.log(`${studentById != null ? studentById.classId : uid}`);
   const useStyles = makeStyles({
     container: {
       display: "block",
@@ -69,12 +73,12 @@ export default function EditForm({ studentById, role }) {
   };
   const handleDate = (e) => {
     setValue(e);
-    // format(e, "dd/MM/yyyy");
+
     var input = e;
     var date = format(input, "MM/dd/yyyy");
     console.log(date);
     setStudent({ ...student, ["dob"]: date });
-    // setTime(input);
+
     console.log({ student });
   };
   const editStudentDetail = (event) => {
@@ -147,38 +151,25 @@ export default function EditForm({ studentById, role }) {
         <FormControl fullWidth>
           <InputLabel>Class</InputLabel>
           <Select
-            key={`select-${studentById != null ? studentById.classId : ""}`}
+            key={`select-${studentById != null ? studentById.classId : uid}`}
             style={{ minWidth: "30px" }}
             label="Class"
             required
-            //   displayEmpty
             id="my-input"
             name="classId"
             defaultValue={studentById != null ? studentById.classId : ""}
             onChange={(e) => onValueChange(e)}
           >
             {ListClasses.map((Class) => {
-              // console.log(Class);
               return (
-                <MenuItem
-                  key={Class.id}
-                  value={Class.id}
-                  // defaultValue={Class.name}
-                  // selected={Class.id === student.classId}
-                >
+                <MenuItem key={Class.id} value={Class.id}>
                   {Class.name}
                 </MenuItem>
               );
             })}
           </Select>
         </FormControl>
-        <Button
-          type="submit"
-          variant="outlined"
-          // onClick={(e) => {
-          //   editStudentDetail(student.id);
-          // }}
-        >
+        <Button type="submit" variant="outlined">
           Add
         </Button>
       </form>

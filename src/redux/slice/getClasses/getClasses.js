@@ -4,7 +4,7 @@ import ClassesApi from "../../services/classes/getClasses";
 export const getClasses = createAsyncThunk("getClassesReducer", async () => {
   try {
     const res = await ClassesApi.getClasses("");
-    // console.log(res);
+    ;
     return res.data;
   } catch (error) {
     return error;
@@ -24,13 +24,13 @@ export const ClassesSlice = createSlice({
     builder.addCase(getClasses.fulfilled, (state, action) => {
       state.classes = action.payload;
       state.status = "done";
-      // console.log(state.classes);
+      
     });
   },
 });
 export const getClassesReducer = ClassesSlice.reducer;
 export const selectClasses = (state) => {
-  // console.log(state.getClasses);
+  
   return state.getClasses.classes;
 };
 export const selectStatusClass = (state) => {

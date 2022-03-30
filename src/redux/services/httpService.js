@@ -19,7 +19,7 @@ const httpService = {
         headers,
         params,
       });
-      // console.log(res);
+      
       return res;
     } catch (error) {
       const err = error;
@@ -40,7 +40,7 @@ const httpService = {
   },
   POST: async (uri, token, params) => {
     let url = CLIENT_BASE_URL + uri;
-    console.log(url);
+   
     let headers = {};
     if (token === "" || token === null) {
       headers = {
@@ -84,9 +84,9 @@ const httpService = {
       };
     }
     try {
-      // const a = await new Promise(setTimeout(() => {}, 3000));
+      
       const res = await axios.delete(url + params);
-      // console.log(res);
+    
       return res;
     } catch (error) {
       const err = error;
@@ -107,7 +107,7 @@ const httpService = {
   },
   PUT: async (uri, token, data) => {
     let url = CLIENT_BASE_URL + uri;
-    console.log(url);
+   
     let headers = {};
     if (token === "" || token === null) {
       headers = {
@@ -120,7 +120,7 @@ const httpService = {
     }
     try {
       const res = await axios.put(url, data);
-      console.log(res);
+      
       return res;
     } catch (error) {
       const err = error;

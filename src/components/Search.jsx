@@ -1,10 +1,10 @@
-import * as React from "react";
-import { styled, alpha } from "@mui/material/styles";
+import SearchIcon from "@mui/icons-material/Search";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import InputBase from "@mui/material/InputBase";
-import SearchIcon from "@mui/icons-material/Search";
+import { alpha, styled } from "@mui/material/styles";
+import Toolbar from "@mui/material/Toolbar";
+import * as React from "react";
 import { useDispatch } from "react-redux";
 import { searcStudentsByName } from "../redux/slice/getStudents/getStudents";
 
@@ -37,7 +37,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
+
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -60,7 +60,6 @@ export default function SearchAppBar() {
     clearTimeout(timer);
     const newTimer = setTimeout(() => {
       const name = e.target.value;
-      console.log(name);
       dispatch(searcStudentsByName(name));
     }, 500);
 

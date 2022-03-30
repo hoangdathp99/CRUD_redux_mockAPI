@@ -1,23 +1,20 @@
 import {
-  TableContainer,
-  Paper,
-  Table,
-  TableCell,
-  TableBody,
-  TableRow,
-  TableHead,
   Button,
   Container,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import SearchAppBar from "../components/search";
+import SearchAppBar from "../components/Search";
 // import { getStudentsSelector } from "../redux/slice/getDataSlice";
 import {
   deleteStudent,
-  getStudentById,
   getStudents,
   selectStatus,
   selectStatus_delete,
@@ -27,23 +24,17 @@ import {
 export default function ListStudents() {
   const students = useSelector(selectStudents);
   const status_delete = useSelector(selectStatus_delete);
-  const status_edit = useSelector(selectStatus_edit);
-  const status = useSelector(selectStatus);
   const dispatch = useDispatch();
-  // const select = useSelector();
+
   const [deleted_id, setDeleted_id] = useState("");
-  // console.log(status_delete);
-  console.log(students);
-  console.log(status);
+
   useEffect(() => {
     if (status_delete === "done" || status_delete == "idle")
       dispatch(getStudents("?_expand=class"));
   }, [status_delete]);
+  
   const useStyles = makeStyles({
-    table: {
-      // width: "90%",
-      // margin: "50px 0 0 50px",
-    },
+    table: {},
     thead: {
       "& > *": {
         fontSize: 20,
@@ -56,16 +47,12 @@ export default function ListStudents() {
         fontSize: 18,
       },
     },
-    // th: {
-    //   minWitdh: "50px",
-    // },
   });
   const classes = useStyles();
   const deleteUserData = (id) => {
     dispatch(deleteStudent(id));
     setDeleted_id(id);
   };
-  const handleClickAdd = (e) => {};
   return (
     <Container maxWidth="1140px" style={{ padding: "30px" }}>
       <Button
@@ -106,9 +93,6 @@ export default function ListStudents() {
                   style={{ margin: 30 }}
                   component={Link}
                   to={`/Edit/${student.id}`}
-                  // onClick={(e) => {
-                  //   getsudentById(student.id);
-                  // }}
                 >
                   Edit
                 </Button>
@@ -124,7 +108,6 @@ export default function ListStudents() {
                   }
                 >
                   DELETE
-                  {/* {status_delete === "loading" ? "...loading" : "Delete"} */}
                 </Button>
               </TableCell>
             </TableRow>

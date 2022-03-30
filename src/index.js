@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import { store } from "./redux/store";
 import { Provider } from "react-redux";
-import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import App from "./App";
 import ListClass from "./components/listClass";
-import ListStudents from "./view/listStudents";
-import AddStudents from "./view/addStudents";
-import EditStudent from "./view/editStudent";
+import "./index.css";
+import { store } from "./redux/store";
+import * as serviceWorker from "./serviceWorker";
+import AddStudents from "./view/AddStudents";
+import EditStudent from "./view/EditStudent";
+import ListStudents from "./view/ListStudents";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -17,38 +17,10 @@ ReactDOM.render(
         <App />
         <Routes>
           <Route path="/" element={<ListStudents />} />
-          <Route
-            path="/ListClasses"
-            element={
-              <ListClass
-              // reload={true}
-              />
-            }
-          />
-          <Route
-            path="/ListStudents"
-            element={
-              <ListStudents
-              // reload={true}
-              />
-            }
-          />
-          <Route
-            path="/Add"
-            element={
-              <AddStudents
-              // reload={true}
-              />
-            }
-          />
-          <Route
-            path="/Edit/:id"
-            element={
-              <EditStudent
-              // reload={true}
-              />
-            }
-          />
+          <Route path="/ListClasses" element={<ListClass />} />
+          <Route path="/ListStudents" element={<ListStudents />} />
+          <Route path="/Add" element={<AddStudents />} />
+          <Route path="/Edit/:id" element={<EditStudent />} />
         </Routes>
       </Provider>
     </BrowserRouter>

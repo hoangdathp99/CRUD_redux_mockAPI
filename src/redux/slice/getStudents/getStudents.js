@@ -1,12 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import StudentsApi from "../../services/students/getStudents";
-import axios from "axios";
 export const getStudents = createAsyncThunk(
   "getStudentsReducer",
   async (params) => {
     try {
       const res = await StudentsApi.getstudents(params);
-      // console.log(res);
+      
       return res.data;
     } catch (error) {
       return error;
@@ -34,8 +33,7 @@ export const searcStudentsByName = createAsyncThunk(
 );
 export const addStudents = createAsyncThunk("addStudent", async (student) => {
   try {
-    // const res = await axios.post(`http://localhost:3001/students`, student);
-    // console.log(res);
+   
     const res = await StudentsApi.addStudent(student);
     return res.data;
   } catch (error) {
@@ -43,12 +41,6 @@ export const addStudents = createAsyncThunk("addStudent", async (student) => {
   }
 });
 export const editStudent = createAsyncThunk("editStudent", async (student) => {
-  console.log(student.id);
-  console.log(student);
-  // const res = await axios.put(
-  //   `http://localhost:3001/students/${student.id}`,
-  //   student
-  // );
   try {
     const res = await StudentsApi.editStudent(student.id, student);
     return res.data;
@@ -56,18 +48,12 @@ export const editStudent = createAsyncThunk("editStudent", async (student) => {
     return error;
   }
 
-  // try {
-  //   const res = await StudentsApi.editStudent(id, student);
-  //   console.log(res);
-  //   return res;
-  // } catch (error) {
-  //   return error;
-  // }
+  
 });
 export const deleteStudent = createAsyncThunk("deleteStudent", async (id) => {
   try {
     const res = await StudentsApi.deleteStudent(id);
-    console.log(res);
+   
     return res.data;
   } catch (error) {
     return error;
@@ -121,7 +107,7 @@ export const StudentSlice = createSlice({
     builder.addCase(getStudents.fulfilled, (state, action) => {
       state.student = action.payload;
       state.status = "done";
-      // console.log(action);
+      
     });
     builder.addCase(searcStudentsByName.pending, (state) => {
       state.status = "loading";
@@ -129,7 +115,7 @@ export const StudentSlice = createSlice({
     builder.addCase(searcStudentsByName.fulfilled, (state, action) => {
       state.student = action.payload;
       state.status = "done";
-      // console.log(action);
+     
     });
     builder.addCase(addStudents.pending, (state) => {
       state.status_add = "loading";
@@ -169,7 +155,7 @@ export const selectStatus = (state) => {
   return state.getStudents.status;
 };
 export const selectStatus_add = (state) => {
-  console.log(state.getStudents.status_add);
+  
   return state.getStudents.status_add;
 };
 export const selectStatus_delete = (state) => {
