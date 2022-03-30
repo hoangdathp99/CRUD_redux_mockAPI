@@ -12,10 +12,10 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
-import ListStudents from "./listStudents";
+import ListStudents from "../view/listStudents";
 import ListClass from "./listClass";
 import "../css/nav.scss";
-const pages = ["ListStudents", "ListClasses"];
+const pages = ["ListStudents"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {

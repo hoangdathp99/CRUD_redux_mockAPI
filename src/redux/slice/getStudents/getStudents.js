@@ -21,6 +21,17 @@ export const getStudentById = createAsyncThunk("getStudentById", async (id) => {
     return error;
   }
 });
+export const searcStudentsByName = createAsyncThunk(
+  "searchStudentByName",
+  async (name) => {
+    try {
+      const res = await StudentsApi.searchstudentByName(name);
+      return res.data;
+    } catch (error) {
+      return error;
+    }
+  }
+);
 export const addStudents = createAsyncThunk("addStudent", async (student) => {
   try {
     // const res = await axios.post(`http://localhost:3001/students`, student);
@@ -108,6 +119,14 @@ export const StudentSlice = createSlice({
       state.status = "loading";
     });
     builder.addCase(getStudents.fulfilled, (state, action) => {
+      state.student = action.payload;
+      state.status = "done";
+      // console.log(action);
+    });
+    builder.addCase(searcStudentsByName.pending, (state) => {
+      state.status = "loading";
+    });
+    builder.addCase(searcStudentsByName.fulfilled, (state, action) => {
       state.student = action.payload;
       state.status = "done";
       // console.log(action);

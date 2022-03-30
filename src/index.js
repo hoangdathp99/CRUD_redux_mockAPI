@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ListClass from "./components/listClass";
-import ListStudents from "./components/listStudents";
+import ListStudents from "./view/listStudents";
 import AddStudents from "./view/addStudents";
 import EditStudent from "./view/editStudent";
 ReactDOM.render(

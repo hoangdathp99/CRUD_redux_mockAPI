@@ -13,6 +13,7 @@ import { makeStyles } from "@mui/styles";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import SearchAppBar from "../components/search";
 // import { getStudentsSelector } from "../redux/slice/getDataSlice";
 import {
   deleteStudent,
@@ -76,6 +77,7 @@ export default function ListStudents() {
       >
         ADD
       </Button>
+      <SearchAppBar />
       <Table className={classes.table}>
         <TableHead>
           <TableRow className={classes.thead}>

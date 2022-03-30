@@ -29,5 +29,10 @@ const StudentsApi = {
     console.log(uri);
     return httpService.GET(uri, null, null);
   },
+  searchstudentByName: (params) => {
+    const uri = url.getStudents + "?name_like=" + params + "&_expand=class";
+    console.log(uri);
+    return httpService.GET(uri, null, null);
+  },
 };
 export default StudentsApi;
