@@ -11,139 +11,11 @@
   ],
   "students": [
     {
-      "name": "dathq",
-      "dob": "03/31/2022",
-      "address": "adasd",
-      "gender": "asdads",
-      "classId": 1,
-      "id": 21
-    },
-    {
-      "name": "test2345",
-      "dob": "03/23/2022",
-      "address": "stts",
-      "gender": "tstst",
-      "classId": 2,
-      "id": 22
-    },
-    {
-      "name": "test145",
-      "dob": "03/31/2022",
-      "address": "asdad",
-      "gender": "asdasd",
-      "classId": 1,
-      "id": 23
-    },
-    {
-      "name": "test56",
-      "dob": "03/25/2022",
-      "address": "dasa",
-      "gender": "dada",
-      "classId": 1,
-      "id": 24
-    },
-    {
-      "dob": "03/26/2022",
-      "name": "test145",
-      "address": "qweqweqweq12313",
-      "gender": "qweqwe1231",
-      "classId": 1,
-      "id": 25
-    },
-    {
-      "name": "testtesst",
-      "dob": "03/30/2022",
-      "address": "sasda",
-      "gender": "asdasd",
-      "classId": 2,
-      "id": 26
-    },
-    {
-      "name": "asda",
-      "dob": "03/31/2022",
-      "address": "asdads",
-      "gender": "asdasd",
-      "classId": 2,
-      "id": 27
-    },
-    {
-      "name": "testNav",
-      "dob": "03/31/2022",
-      "address": "asdasdasd",
-      "gender": "asdasdasd",
-      "classId": 1,
-      "id": 28
-    },
-    {
-      "name": "testNav2",
-      "dob": "03/30/2022",
-      "address": "asdasd",
-      "gender": "asdasda",
-      "classId": 1,
-      "id": 29
-    },
-    {
-      "name": "asd",
-      "dob": "03/30/2022",
-      "address": "asda",
-      "gender": "asdasd",
-      "classId": 1,
-      "id": 30
-    },
-    {
-      "name": "adasd",
-      "dob": "03/30/2022",
-      "address": "asdasd",
-      "gender": "asdasd",
-      "classId": 1,
-      "id": 31
-    },
-    {
-      "name": "testNav3",
-      "dob": "03/30/2022",
-      "address": "qweqwe",
-      "gender": "qweqwe",
-      "classId": 2,
-      "id": 32
-    },
-    {
-      "name": "test3",
-      "dob": "03/30/2022",
-      "address": "qweqw",
-      "gender": "qweqwe",
-      "classId": 2,
-      "id": 33
-    },
-    {
-      "name": "test4",
-      "dob": "03/31/2022",
-      "address": "qweqw",
-      "gender": "qweqw",
-      "classId": 1,
-      "id": 34
-    },
-    {
-      "name": "dad",
-      "dob": "03/30/2022",
-      "address": "adad",
-      "gender": "dadad",
-      "classId": 2,
-      "id": 35
-    },
-    {
-      "name": "dasda",
-      "dob": "03/30/2022",
-      "address": "asda",
-      "gender": "dad",
-      "classId": 1,
-      "id": 36
-    },
-    {
       "name": "test",
       "dob": "03/30/2022",
       "address": "tsts",
       "gender": "tstst",
-      "classId": 2,
+      "classId": 1,
       "id": 37
     },
     {
@@ -331,140 +203,92 @@
       "id": 60
     },
     {
-      "name": "a",
+      "name": "61",
       "dob": "03/30/2022",
-      "address": "a",
-      "gender": "a",
-      "classId": 2,
+      "address": "qwe",
+      "gender": "qeq",
+      "classId": 1,
       "id": 61
     },
     {
-      "name": "asd",
-      "dob": "03/06/2022",
-      "address": "asd",
-      "gender": "asd",
+      "name": "62",
+      "dob": "03/30/2022",
+      "address": "6262",
+      "gender": "6262",
       "classId": 1,
       "id": 62
     },
     {
-      "name": "testtest",
+      "name": "63",
       "dob": "03/30/2022",
-      "address": "esa",
-      "gender": "ewa",
-      "classId": 2,
+      "address": "35",
+      "gender": "53",
+      "classId": 1,
       "id": 63
     },
     {
-      "name": "test34",
-      "dob": "03/31/2022",
-      "address": "ewe",
-      "gender": "wewe",
+      "name": "asd",
+      "dob": "03/30/2022",
+      "address": "asd",
+      "gender": "asd",
       "classId": 1,
       "id": 64
     },
     {
-      "name": "dasd",
+      "name": "65",
       "dob": "03/30/2022",
-      "address": "dad",
-      "gender": "asda",
+      "address": "3443",
+      "gender": "4343",
       "classId": 1,
       "id": 65
     },
     {
-      "name": "sadasd",
+      "name": "66",
       "dob": "03/30/2022",
-      "address": "asdasd",
-      "gender": "asda",
-      "classId": 2,
+      "address": "66",
+      "gender": "66",
+      "classId": 1,
       "id": 66
     },
     {
-      "name": "test12312",
+      "name": "66",
       "dob": "03/30/2022",
-      "address": "1231",
-      "gender": "1231",
+      "address": "66",
+      "gender": "66",
       "classId": 1,
       "id": 67
     },
     {
-      "name": "testn",
+      "name": "68",
       "dob": "03/30/2022",
-      "address": "qqw",
-      "gender": "qwq",
-      "classId": 2,
+      "address": "68",
+      "gender": "68",
+      "classId": 1,
       "id": 68
     },
     {
-      "name": "dat",
+      "name": "69",
       "dob": "03/30/2022",
-      "address": "1",
-      "gender": "1",
+      "address": "69",
+      "gender": "69",
       "classId": 2,
       "id": 69
     },
     {
-      "name": "dat2",
+      "name": "70",
       "dob": "03/30/2022",
-      "address": "qe",
-      "gender": "qwe",
+      "address": "70",
+      "gender": "70",
       "classId": 1,
       "id": 70
     },
     {
-      "name": "das",
+      "name": "71",
       "dob": "03/30/2022",
-      "address": "ads",
-      "gender": "dad",
-      "classId": 2,
+      "address": "71",
+      "gender": "71",
+      "classId": 1,
       "id": 71
-    },
-    {
-      "classId": 1,
-      "name": "test1",
-      "dob": "03/30/2022",
-      "address": "qwe",
-      "gender": "qwe",
-      "id": 72
-    },
-    {
-      "name": "test2",
-      "dob": "03/30/2022",
-      "address": "te",
-      "gender": "te",
-      "classId": 2,
-      "id": 73
-    },
-    {
-      "name": "test3",
-      "dob": "03/30/2022",
-      "address": "test",
-      "gender": "test",
-      "classId": 1,
-      "id": 74
-    },
-    {
-      "classId": 1,
-      "gender": "as",
-      "address": "as",
-      "dob": "03/30/2022",
-      "name": "asd",
-      "id": 75
-    },
-    {
-      "classId": 1,
-      "gender": "as",
-      "address": "asd",
-      "dob": "03/30/2022",
-      "name": "asda",
-      "id": 76
-    },
-    {
-      "classId": 2,
-      "gender": "asd",
-      "address": "asdasd",
-      "dob": "03/30/2022",
-      "name": "dasda",
-      "id": 77
     }
   ]
 }

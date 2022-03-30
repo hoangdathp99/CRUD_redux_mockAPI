@@ -30,15 +30,8 @@ export default function EditForm({ studentById, role }) {
   const { name, dob, address, gender, classId } = student;
   const ListClasses = useSelector(selectClasses);
   const status_edit = useSelector(selectStatus_edit);
-  const status_add = useSelector(selectStatus_add);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  // console.log(uuid());
-  const uid = useMemo(() => {
-    return uuid();
-  }, []);
-  console.log(`${studentById != null ? studentById.classId : uid}`);
   const useStyles = makeStyles({
     container: {
       display: "block",
@@ -49,46 +42,29 @@ export default function EditForm({ studentById, role }) {
       },
     },
   });
-  useEffect(() => {
-    if (status_edit === "done") {
-      dispatch(resetStatus_add());
-      navigate(-1);
-    }
-  }, [status_edit]);
-  useEffect(() => {
-    if (status_add === "done") {
-      dispatch(resetStatus_add());
-      navigate(-1);
-    }
-  }, [status_add]);
+  
+
   useLayoutEffect(() => {
     if (studentById != null) {
       setStudent(studentById);
     }
   }, [studentById]);
   const onValueChange = (e) => {
-    console.log(e.target.value);
     setStudent({ ...student, [e.target.name]: e.target.value });
-    console.log(student);
   };
   const handleDate = (e) => {
     setValue(e);
 
     var input = e;
     var date = format(input, "MM/dd/yyyy");
-    console.log(date);
     setStudent({ ...student, ["dob"]: date });
-
-    console.log({ student });
   };
   const editStudentDetail = (event) => {
     event.preventDefault();
-    console.log("edit");
-    console.log(student);
     dispatch(editStudent(student));
   };
-  const addStudentDetail = () => {
-    console.log("add");
+  const addStudentDetail = (event) => {
+    event.preventDefault();
     dispatch(addStudents(student));
   };
   const classes = useStyles();
@@ -99,7 +75,7 @@ export default function EditForm({ studentById, role }) {
         onSubmit={
           role === "edit"
             ? (e) => editStudentDetail(e)
-            : (e) => addStudentDetail()
+            : (e) => addStudentDetail(e)
         }
         autoComplete="off"
       >
@@ -151,13 +127,12 @@ export default function EditForm({ studentById, role }) {
         <FormControl fullWidth>
           <InputLabel>Class</InputLabel>
           <Select
-            key={`select-${studentById != null ? studentById.classId : uid}`}
             style={{ minWidth: "30px" }}
             label="Class"
             required
             id="my-input"
             name="classId"
-            defaultValue={studentById != null ? studentById.classId : ""}
+            value={student?.classId || ""}
             onChange={(e) => onValueChange(e)}
           >
             {ListClasses.map((Class) => {
