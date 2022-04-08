@@ -12,11 +12,11 @@ export default function AddStudents() {
   const dispatch = useDispatch();
   useEffect(() => {
     if (status_add === "done") {
-      console.log("navigate");
+      // console.log("navigate");
       dispatch(resetStatus_add());
       navigate("../ListStudents", { replace: true });
     }
-    console.log(status_add);
+    // console.log(status_add);
   }, [status_add]);
   return <EditForm studentById={null} role="add"></EditForm>;
 }
