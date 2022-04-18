@@ -1,6 +1,4 @@
 import { LocalizationProvider, MobileDatePicker } from "@mui/lab";
-import { v4 as uuid } from "uuid";
-
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import {
   Button,
@@ -8,30 +6,25 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  TextField,
+  TextField
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { format } from "date-fns";
-import { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { selectClasses } from "../redux/slice/getClasses/getClasses";
 import {
   addStudents,
-  editStudent,
-  resetStatus_add,
-  selectStatus_add,
-  selectStatus_edit,
+  editStudent
 } from "../redux/slice/getStudents/getStudents";
+
 
 export default function EditForm({ studentById, role }) {
   const [student, setStudent] = useState({});
   const [value, setValue] = useState(null);
-  const { name, dob, address, gender, classId } = student;
+  const { name, dob, address, gender } = student;
   const ListClasses = useSelector(selectClasses);
-  const status_edit = useSelector(selectStatus_edit);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const useStyles = makeStyles({
     container: {
       display: "block",

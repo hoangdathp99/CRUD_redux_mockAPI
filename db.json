@@ -11,43 +11,11 @@
   ],
   "students": [
     {
-      "name": "a",
-      "dob": "03/30/2022",
-      "address": "a",
-      "gender": "a",
-      "classId": 1,
-      "id": 38
-    },
-    {
-      "name": "b",
-      "dob": "03/30/2022",
-      "address": "b",
-      "gender": "b",
-      "classId": 1,
-      "id": 39
-    },
-    {
-      "name": "c",
-      "dob": "03/30/2022",
-      "address": "c",
-      "gender": "c",
-      "classId": 1,
-      "id": 40
-    },
-    {
-      "gender": "d",
-      "address": "d",
-      "name": "d",
-      "dob": "03/31/2022",
-      "classId": 1,
-      "id": 41
-    },
-    {
       "name": "e",
       "dob": "03/30/2022",
       "address": "e",
       "gender": "e",
-      "classId": 2,
+      "classId": 1,
       "id": 42
     },
     {

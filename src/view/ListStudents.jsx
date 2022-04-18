@@ -5,7 +5,7 @@ import {
   TableBody,
   TableCell,
   TableHead,
-  TableRow,
+  TableRow
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React, { useEffect, useState } from "react";
@@ -15,11 +15,7 @@ import SearchAppBar from "../components/Search";
 // import { getStudentsSelector } from "../redux/slice/getDataSlice";
 import {
   deleteStudent,
-  getStudents,
-  selectStatus,
-  selectStatus_delete,
-  selectStatus_edit,
-  selectStudents,
+  getStudents, selectStatus_delete, selectStudents
 } from "../redux/slice/getStudents/getStudents";
 export default function ListStudents() {
   const students = useSelector(selectStudents);
@@ -29,7 +25,7 @@ export default function ListStudents() {
   const [deleted_id, setDeleted_id] = useState("");
 
   useEffect(() => {
-    if (status_delete === "done" || status_delete == "idle")
+    if (status_delete === "done" || status_delete === "idle")
       dispatch(getStudents("?_expand=class"));
   }, [status_delete]);
   
@@ -102,7 +98,7 @@ export default function ListStudents() {
                   variant="contained"
                   onClick={() => deleteUserData(student.id)}
                   disabled={
-                    status_delete === "loading" && student.id == deleted_id
+                    status_delete === "loading" && student.id === deleted_id
                       ? true
                       : false
                   }
